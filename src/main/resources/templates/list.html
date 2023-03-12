@@ -19,9 +19,9 @@
             </tr>
             <tr>
                 <!-- TODO #2: Complete the View Jobs By Category Table. -->
-
-                <td></td> <!-- Feel free to remove or modify this element if necessary. -->
-
+                <!-- option 2, modifying list.html to fill in the empty table. Less modification and easier to implement.  -->
+                <td><a th:href="@{/list/jobs(column='all')}">View All</a></td>
+                <!-- /list/jobs endpoint with the query parameter column set to all, retrieving all jobs when clicked. -->
                 <td th:each="category : ${tableChoices}">
                     <ul>
                         <li th:each="item : ${category.value}">
