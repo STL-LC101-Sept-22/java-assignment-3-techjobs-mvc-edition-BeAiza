@@ -34,25 +34,43 @@
         <input type="submit" value="Search" />
     </form>
 
-    <hr />
+
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
-    <table class="centeredTable">
-<!--        <tr>-->
-<!--            <th th:text="${columns[column]}"></th>-->
-<!--            <th th:text="${columns[employer]}"></th>-->
-<!--            <th th:text="${columns[location]}"></th>-->
-<!--            <th th:text="${columns[positionType]}"></th>-->
-<!--            <th th:text="${columns[coreCompetency]}"></th>-->
-<!--        </tr>-->
-        <tr th:each="job : ${jobs}">
-            <td th:text = "${job.getName()}"></td>
-            <td th:text = "${job.getEmployer().getValue}"></td>
-            <td th:text = "${job.getLocation().getValue}"></td>
-            <td th:text = "${job.getPositionType().getValue}"></td>
-            <td th:text = "${job.getCoreCompetency().getValue}"></td>
+    <div th:each="job : ${jobs}">
+        <table class="centeredTable">
+
+        <thead>
+        <!-- Displaying. -->
+        </thead>
+        <tbody>
+        <tr>
+            <th>ID</th>
+            <td th:text="${job.getId()}"></td>
         </tr>
-    </table>
+        <tr>
+            <th>Name</th>
+            <td th:text="${job.getName()}"></td>
+        </tr>
+        <tr>
+            <th>Employer</th>
+            <td th:text="${job.getEmployer().getValue()}"></td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td th:text="${job.getLocation().getValue()}"></td>
+        </tr>
+        <tr>
+            <th>Position Type</th>
+            <td th:text="${job.getPositionType().getValue()}"></td>
+        </tr>
+        <tr>
+            <th>Skill</th>
+            <td th:text="${job.getCoreCompetency().getValue()}"></td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 </body>
